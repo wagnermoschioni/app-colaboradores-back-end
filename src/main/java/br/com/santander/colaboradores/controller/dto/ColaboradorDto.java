@@ -5,6 +5,9 @@ import java.util.stream.Collectors;
 
 import br.com.santander.colaboradores.modelo.Colaborador;
 
+/*
+ * Padrão DTO para mapeamento de entidade
+ */
 public class ColaboradorDto {
 
 	private Long id;
@@ -44,6 +47,8 @@ public class ColaboradorDto {
 
 	public static List<ColaboradorDto> converter(List<Colaborador> colaboradores) {
 		// TODO Auto-generated method stub
+		
+		//Stream do java para conversao, ao inves de utilizar um for para cada item da lista.
 		return colaboradores.stream().map(ColaboradorDto::new).collect(Collectors.toList());
 	}
 	

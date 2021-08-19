@@ -25,6 +25,9 @@ public class ColaboradoresController {
 	@Autowired
 	private ColaboradorRepository colaboradorRepository;
 
+	/*
+	 * metodo para listar os colaboradores gravados em banco
+	 */
 	@GetMapping
 	@ResponseStatus(HttpStatus.OK)
 	public List<ColaboradorDto> listarColaboradores() {
@@ -34,6 +37,7 @@ public class ColaboradoresController {
    
 	}
 	
+	
 	@GetMapping("/{nome}")
 	@ResponseStatus(HttpStatus.OK)
 	public List<ColaboradorDto> listarColaboradorPorNome(String nomeColaborador) {
@@ -42,13 +46,9 @@ public class ColaboradoresController {
 
 	}
 	
-//	@RequestMapping("/excluirColaborador")
-//	public void excluirPorId(Long idColaborador) {
-//	    colaboradorRepository.deleteById(idColaborador);		
-//
-//	}
-	
-	
+	/*
+	 * metodo para gravar um novo colaborador no banco de dados
+	 */
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public Colaborador salvarColaborador(@RequestBody Colaborador colaboradorRequest) {
@@ -56,6 +56,9 @@ public class ColaboradoresController {
 		return colaboradorSalvo;
 	}
 	
+	/*
+	 * metodo para atualizar o cadastro do colaborador no banco de dados
+	 */	
 	@PutMapping("/{id}")
 	@ResponseStatus(HttpStatus.OK)
 	public Colaborador atualizarDadosColaborador(@RequestBody Colaborador colaboradorRequest) {

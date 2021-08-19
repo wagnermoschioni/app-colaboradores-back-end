@@ -2,10 +2,13 @@ package br.com.santander.colaboradores.modelo;
 
 
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 
 
@@ -21,6 +24,9 @@ public class Colaborador {
 	private String cargo;
 	private String dataNascimento;
 	private String endereco;
+	@OneToOne (cascade=CascadeType.ALL)
+	@JoinColumn(name="cep") 
+	private Endereco endereco1;
 	
 	
 	@Override
@@ -72,6 +78,16 @@ public class Colaborador {
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
+
+	public Endereco getEndereco1() {
+		return endereco1;
+	}
+
+	public void setEndereco1(Endereco endereco1) {
+		this.endereco1 = endereco1;
+	}
+	
+	
 	
 	
 

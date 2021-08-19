@@ -1,14 +1,24 @@
 package br.com.santander.colaboradores.modelo;
 
-public class Endereco {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
+@Entity
+public class Endereco {
+   
 	private String rua;
 	private String numero;
 	private String bairro;
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private String cep;
 	private String cidade;
 	private String estado;
-
+	@OneToOne (mappedBy = "endereco1")
+    private Colaborador colaborador;
+    
 	public String getRua() {
 		return rua;
 	}
