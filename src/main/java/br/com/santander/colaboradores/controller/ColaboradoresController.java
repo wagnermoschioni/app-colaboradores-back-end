@@ -37,7 +37,9 @@ public class ColaboradoresController {
    
 	}
 	
-	
+	/*
+	 * metodo para listar colaborador pelo campo nome
+	 */	
 	@GetMapping("/{nome}")
 	@ResponseStatus(HttpStatus.OK)
 	public List<ColaboradorDto> listarColaboradorPorNome(String nomeColaborador) {

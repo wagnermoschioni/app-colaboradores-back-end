@@ -26,7 +26,7 @@ public class Colaborador {
 	private String endereco;
 	@OneToOne (cascade=CascadeType.ALL)
 	@JoinColumn(name="cep") 
-	private Endereco endereco1;
+	private Endereco enderecoFull;
 	
 	
 	@Override
@@ -80,11 +80,11 @@ public class Colaborador {
 	}
 
 	public Endereco getEndereco1() {
-		return endereco1;
+		return enderecoFull;
 	}
 
-	public void setEndereco1(Endereco endereco1) {
-		this.endereco1 = endereco1;
+	public void setEndereco1(Endereco enderecoFull) {
+		this.enderecoFull = enderecoFull;
 	}
 	
 	

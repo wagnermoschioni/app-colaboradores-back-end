@@ -16,7 +16,7 @@ public class Endereco {
 	private String cep;
 	private String cidade;
 	private String estado;
-	@OneToOne (mappedBy = "endereco1")
+	@OneToOne (mappedBy = "enderecoFull")
     private Colaborador colaborador;
     
 	public String getRua() {
